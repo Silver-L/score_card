@@ -2,7 +2,7 @@
 
 import pandas as pd
 import numpy as np
-from condition_fun import *
+from binning.condition_fun import *
 
 
 def iv(dt, y, x=None, positive='bad|1', order=True):

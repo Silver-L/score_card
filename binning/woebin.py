@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 import time
 import os
 import platform
-from condition_fun import *
-from info_value import *
+from binning.condition_fun import *
+from binning.info_value import *
 
 
 # converting vector (breaks & special_values) to dataframe

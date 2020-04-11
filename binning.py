@@ -7,7 +7,7 @@ import numpy as np
 from scipy.stats import chi2
 import pandas as pd
 from pandas import DataFrame,Series
-from woebin import *
+from binning.woebin import *
 import scipy
 import seaborn as sns
 
