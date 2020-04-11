@@ -189,7 +189,6 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
   * 箱线图
 
 * 客户年龄和收入的分布图
-
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/EDA.png" alt="error"/>
 
 
