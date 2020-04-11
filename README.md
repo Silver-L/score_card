@@ -213,14 +213,16 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
     * （1）Split 分箱
       * 一种自上而下(即基于分裂)的数据分段方法。如下图所示，Split 分箱和决策树比较相似，切分点的选择指标主要有 entropy，gini 指数和 IV 值等。
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/split_binning.jpg" alt="error"/>
-
+      <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/split_binning.jpg" alt="error"/>
+  
     * （2）Chimerge 分箱（卡方分箱）
       * 一种自底向上(即基于合并)的数据离散化方法。
       * 其基本思想是如果两个相邻的区间具有类似的类分布，则这两个区间合并；否则，它们应保持分开。
       * Chimerge通常采用卡方值来衡量两相邻区间的类分布情况。
+      * 
+      <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
+
 
 ## Reference
 #### 1、项目
