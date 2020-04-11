@@ -43,7 +43,7 @@ data.describe()
 #### 2、数据补齐
 * 人工填写（Filling Manually）
   * 这个方法产生数据偏离最小，是填充效果最好的一种。当数据规模很大、空值很多的时候，该方法是不可行的。
-  * <font color=#FF0000 >不适合大数据</font>
+  * ***不适合大数据***
 
 * 特殊值填充（Treating Missing Attribute values as Special values）
   * 将空值作为一种特殊的属性值来处理，它不同于其他的任何属性值。如所有的空值都用“unknown”填充。
