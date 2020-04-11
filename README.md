@@ -80,7 +80,16 @@ data.describe()
     * 在信息表包含不完整数据较多的情况下，可能的测试方案将巨增。
 
 * 回归（Regression）
-  * 基于完整的数据集，建立回归方程（模型）。对于包含空值的对象，将已知属性值代入方程来估计未知属性值，以此估计值来进行填充。当变量不是线性相关或预测变量高度相关时会导致有偏差的估计。
+  * 基于完整的数据集，建立回归方程（模型）。对于包含空值的对象，将已知属性值代入方程来估计未知属性值，以此估计值来进行填充。
+  * ***当变量不是线性相关或预测变量高度相关时会导致有偏差的估计。***
+  
+  * 常用方法： 随机树林（Random Forest）
+    * ```
+      from sklearn.ensemble import RandomForestRegressor
+      rfr = RandomForestRegressor()
+      rfr.fit(X, Y) # X: data Y: label
+      predicted = rfr.predict(test_data)
+      ```
 
 * 极大似然估计（Max Likelihood ，ML）
   * 常用方法： EM
@@ -120,4 +129,8 @@ https://www.jianshu.com/p/f931a4df202c
 ```
 https://blog.csdn.net/xiedelong/article/details/81607598
 https://blog.csdn.net/w352986331qq/article/details/78639233
+```
+#### 3、Random Forest
+```
+https://blog.csdn.net/qq_34106574/article/details/82016442
 ```
