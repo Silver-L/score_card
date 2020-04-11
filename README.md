@@ -200,12 +200,34 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
   * 树模型等等
 
 ### ***分箱处理（Binning）***
+* 变量分箱（binning）是对连续变量离散化（discretization）的一种称呼。
+* 分箱的几种方法
+  * 1、无监督分箱
+    * (1) 等频分箱：把自变量按从小到大的顺序排列，根据自变量的个数等分为k部分，每部分作为一个分箱。
+    * (2) 等距分箱：把自变量按从小到大的顺序排列，将自变量的取值范围分为k个等距的区间，每个区间作为一个分箱。
+    * (3) 聚类分箱：用k-means聚类法将自变量聚为k类，但在聚类过程中需要保证分箱的有序性。
 
+    * ***由于无监督分箱仅仅考虑了各个变量自身的数据结构，并没有考虑自变量与目标变量之间的关系，因此无监督分箱不一定会带来模型性能的提升。***
+
+  * 2、有监督分箱
+    * （1）Split 分箱
+      * 一种自上而下(即基于分裂)的数据分段方法。如下图所示，Split 分箱和决策树比较相似，切分点的选择指标主要有 entropy，gini 指数和 IV 值等。
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/split_binning.jpg" alt="error"/>
+
+    * （2）Chimerge 分箱（卡方分箱）
+      * 一种自底向上(即基于合并)的数据离散化方法。
+      * 其基本思想是如果两个相邻的区间具有类似的类分布，则这两个区间合并；否则，它们应保持分开。
+      * Chimerge通常采用卡方值来衡量两相邻区间的类分布情况。
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg.jpg" alt="error"/>
 
 ## Reference
 #### 1、项目
 ```
 https://www.jianshu.com/p/f931a4df202c
+https://www.jianshu.com/p/2759e090bd53?t=123
+https://zhuanlan.zhihu.com/p/36539125 (分箱等等）
 ```
 #### 2、缺失值处理
 ```
