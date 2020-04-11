@@ -220,7 +220,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
       * 其基本思想是如果两个相邻的区间具有类似的类分布，则这两个区间合并；否则，它们应保持分开。
       * Chimerge通常采用卡方值来衡量两相邻区间的类分布情况。
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
 
 ## Reference
 #### 1、项目
