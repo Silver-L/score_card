@@ -227,7 +227,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 # https://github.com/ShichenXie/scorecardpy
 # y: label, method: tree or chimerge
 
-from woebin import *
+from binning.woebin import *
 cutoff = woebin(data, y, method='tree')
 ```
 
