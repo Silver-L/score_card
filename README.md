@@ -10,6 +10,8 @@
 * 信用评分
 * 评分系统
 
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/procedure.png" alt="error"/>
+
 ## 一、数据获取
 ### Give Me Some Credit (Kaggle)
 ```
@@ -25,6 +27,8 @@ https://www.kaggle.com/c/GiveMeSomeCredit/data
 * 其他因素：包括了借款人的家属数量（不包括本人在内）。
 * 时间窗口：自变量的观察窗口为过去两年，因变量表现窗口为未来两年。
 
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_variable.png" alt="error"/>
+
 ## 二、数据预处理
 ### ***数据集整体情况***
 用describe函数获取数据集情况
@@ -33,6 +37,7 @@ https://www.kaggle.com/c/GiveMeSomeCredit/data
 data = pd.read_csv('')
 data.describe()
 ```
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_describe.jpg" alt="error"/>
 
 ### ***缺失值处理***
 #### 1、直接删除元祖
@@ -152,6 +157,10 @@ data.describe()
 * 3δ原则
   * 数据服从正态分布：根据正态分布的定义可知，距离平均值3δ之外的概率为 P(|x-μ|>3δ) <= 0.003 ，这属于极小概率事件，在默认情况下我们可以认定，距离超过平均值3δ的样本是不存在的。因此，当样本距离平均值大于3δ，认为该样本为异常值。
   * 根据概率值的大小可以判断 x 是否属于异常值。
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_1.png" alt="error"/>
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_2.png" alt="error"/>
 
 * 使用距离检测多元离群点
   * 当数据不服从正态分布时，可以通过远离平均距离多少倍的标准差来判定，多少倍的取值需要根据经验和实际情况来决定。
