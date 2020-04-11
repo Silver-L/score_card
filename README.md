@@ -43,6 +43,7 @@ data.describe()
 #### 2、数据补齐
 * 人工填写（Filling Manually）
   * 这个方法产生数据偏离最小，是填充效果最好的一种。当数据规模很大、空值很多的时候，该方法是不可行的。
+  * <font color="#FF4500">我要变成这个颜色#FF4500</font>
   * ***不适合大数据***
 
 * 特殊值填充（Treating Missing Attribute values as Special values）
