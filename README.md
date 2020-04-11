@@ -171,9 +171,26 @@ data.describe()
 * 用平均值来修正
 * 不处理
 
+### ***数据切分***
+* 将数据分为训练集和验证集
+```
+# X: data, Y: label, test_size: 验证集比例
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=0)
 
+```
 
+## 三、探索性分析（Exploratory Data Analysis）
+* 在建立模型之前，我们一般会对现有的数据进行 探索性数据分析
+* EDA是指对已有的数据(特别是调查或观察得来的原始数据)在尽量少的先验假定下进行探索。
+* 常用方法
+  * 直方图
+  * 散点图
+  * 箱线图
 
+* 客户年龄和收入的分布图
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/EDA.png" alt="error"/>
 
 
 ## Reference
