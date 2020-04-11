@@ -189,7 +189,17 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
   * 箱线图
 
 * 客户年龄和收入的分布图
+
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/EDA.png" alt="error"/>
+
+## 四、特征选择
+* 好的特征选择能够提升模型的性能，更能帮助我们理解数据的特点、底层结构，这对进一步改善模型、算法都有着重要作用。
+* 本次采用的方法
+  * WOE分析方法，即是通过比较指标分箱和对应分箱的违约概率来确定指标是否符合经济意义。
+* 其他方法
+  * 树模型等等
+
+### ***分箱处理（Binning）***
 
 
 ## Reference
@@ -205,4 +215,12 @@ https://blog.csdn.net/w352986331qq/article/details/78639233
 #### 3、Random Forest
 ```
 https://blog.csdn.net/qq_34106574/article/details/82016442
+```
+#### 4、特征选择
+```
+https://www.zhihu.com/question/28641663?sort=created
+```
+#### 5、分箱
+```
+https://github.com/ShichenXie/scorecardpy
 ```
