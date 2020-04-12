@@ -274,14 +274,14 @@ cutoff = woebin(data, y, method='tree')
   * ***注： 此处使用的WOE计算公式中，坏客户为分母，好客户为分子***
   * 当前分箱中，坏客户占比越大，WOE值越大
   * 当前分箱中WOE的正负，由当前分箱中好坏客户比例，与样本整体好坏客户比例的大小关系决定
-  * WOE的取值范围是[-∞,+∞]，当分箱中好坏客户比例等于整体好坏客户比例时，WOE为0。
+  * WOE的取值范围是(-∞,+∞)，当分箱中好坏客户比例等于整体好坏客户比例时，WOE为0。
   * 对于变量的一个分箱，这个分组的好坏客户比例与整体好坏客户比例相差越大，IV值越大，否则，IV值越小。
   * IV值的取值范围是[0,+∞)，当分箱中只包含好客户或坏客户时，IV = +∞，当分箱中好坏客户比例等于整体好坏客户比例时，IV为0。
 
 * kaggle数据集的IV值计算结果
   * DebtRatio、MonthlyIncome、NumberOfOpenCreditLinesAndLoans、NumberRealEstateLoansOrLines和NumberOfDependents变量的IV值明显较低，所以予以删除。
 
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV.png" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV.png" alt="error"/>
 
 #### 3.2、基于stepwise的变量筛选
 * 基于基于stepwise的变量筛选方法也是评分卡中变量筛选最常用的方法之一。
@@ -326,7 +326,16 @@ cutoff = woebin(data, y, method='tree')
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_2.jpg" width="700" height="500" alt="error"/>
 
+## 五、模型开发
+### ***1、WOE编码***
+* 根据分箱时得到的WOE值，将数据转换为WOE值
+* WOE转换可以将Logistic回归模型转变为标准评分卡格式。
+* 引入WOE转换的目的并不是为了提高模型质量，只是一些变量不应该被纳入模型，这或者是因为它们不能增加模型值，或者是因为与其模型相关系数有关的误差较大
+* ***建立标准信用评分卡也可以不采用WOE转换***
+  * Logistic回归模型需要处理更大数量的自变量
+  * 尽管这样会增加建模程序的复杂性，但最终得到的评分卡都是一样的
 
+### ***2、逻辑回归建立***
 
 
 

@@ -29,6 +29,8 @@ if __name__ == '__main__':
 
     # 分箱(卡方 or tree)
     cutoff = woebin(data, y='SeriousDlqin2yrs', method='tree')
+    # print(cutoff["NumberOfTimes90DaysLate"]["woe"])
+
     feature_index = ['RevolvingUtilizationOfUnsecuredLines', 'age', 'NumberOfTime30-59DaysPastDueNotWorse', 'DebtRatio',
              'MonthlyIncome', 'NumberOfOpenCreditLinesAndLoans', 'NumberOfTimes90DaysLate',
              'NumberRealEstateLoansOrLines', 'NumberOfTime60-89DaysPastDueNotWorse', 'NumberOfDependents']  # x轴的标签
