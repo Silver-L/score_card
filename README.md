@@ -309,6 +309,13 @@ cutoff = woebin(data, y, method='tree')
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_1.jpg" width="700" height="320" alt="error"/>
 
+* 代码
+  * ```
+    corr = data.corr()
+    ```
+
+* 两两相关性用heatmap表示
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/heatmap.png" alt="error"/>
 
 #### 4.2、变量的多重共线性分析
 
