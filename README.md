@@ -289,15 +289,15 @@ cutoff = woebin(data, y, method='tree')
 * 其原理主要是通过随机森林和GBDT等集成模型选取特征的重要度
 * 随机森林计算特征重要度的步骤
 
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/rf_feature.jpg" width="985" height="150" alt="error"/>
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/rf_feature.jpg" width="700" height="107" alt="error"/>
 
   * ***当改变样本在该特征的值，若袋外数据准确率大幅度下降，则该特征对于样本的预测结果 有很大影响，说明特征的重要度比较高。***
 
 * GBDT计算特征重要度原理
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" width="691" height="260" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" width="691" height="270" alt="error"/>
 
 #### 4、基于LASSO正则化的变量筛选
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/lasso_feature.jpg" width="1000" height="142" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/lasso_feature.jpg" width="700" height="100" alt="error"/>
 
 ### ***变量相关性分析***
 * ***即使不进行线性相关性分析也不会影响模型的整体性能***
