@@ -252,8 +252,8 @@ cutoff = woebin(data, y, method='tree')
   * 转化为连续变量之后，便于分析变量与变量之间的相关性
   * 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
 
-### ***单变量筛选**** 单变量的筛选基于变量预测能力
-
+### ***单变量筛选***
+* 单变量的筛选基于变量预测能力
 * 常用方法
   * 基于IV值的变量筛选（代码中使用）
   * 基于stepwise的变量筛选
@@ -298,6 +298,24 @@ cutoff = woebin(data, y, method='tree')
 
 #### 4、基于LASSO正则化的变量筛选
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" alt="error"/>
+
+### ***变量相关性分析***
+* ***即使不进行线性相关性分析也不会影响模型的整体性能***
+* 变量相关性的分析
+  * 为了让模型更易于解释
+  * 保证不同的分箱的得分正确
+
+#### 1、变量两两相关性分析
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_1.jpg" alt="error"/>
+
+
+#### 2、变量的多重共线性分析
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_2.jpg" alt="error"/>
+
+
+
 
 
 ## Reference
