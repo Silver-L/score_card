@@ -307,7 +307,7 @@ cutoff = woebin(data, y, method='tree')
 
 #### 1、变量两两相关性分析
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_1.jpg" width="700" height="470" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_1.jpg" width="700" height="450" alt="error"/>
 
 
 #### 2、变量的多重共线性分析
