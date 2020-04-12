@@ -261,7 +261,7 @@ cutoff = woebin(data, y, method='tree')
   * 基于LASSO正则化的变量筛选
 
 ## Reference
-#### 1、项目
+#### 1、项目（评分卡的总结性文章，干货较多）
 ```
 https://www.jianshu.com/p/f931a4df202c
 https://www.jianshu.com/p/2759e090bd53?t=123
