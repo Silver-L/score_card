@@ -294,7 +294,7 @@ cutoff = woebin(data, y, method='tree')
   * ***当改变样本在该特征的值，若袋外数据准确率大幅度下降，则该特征对于样本的预测结果 有很大影响，说明特征的重要度比较高。***
 
 * GBDT计算特征重要度原理
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" width="800" height="260" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" width="691" height="260" alt="error"/>
 
 #### 4、基于LASSO正则化的变量筛选
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/lasso_feature.jpg" width="1000" height="142" alt="error"/>
