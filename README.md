@@ -279,6 +279,25 @@ cutoff = woebin(data, y, method='tree')
   * IV值的取值范围是[0,+∞)，当分箱中只包含好客户或坏客户时，IV = +∞，当分箱中好坏客户比例等于整体好坏客户比例时，IV为0。
 
 #### 2、基于stepwise的变量筛选
+* 基于基于stepwise的变量筛选方法也是评分卡中变量筛选最常用的方法之一。
+* 包括三种筛选变量的方式
+  * （1）前向选择forward：逐步将变量一个一个放入模型，并计算相应的指标，如果指标值符合条件，则保留，然后再放入下一个变量，直到没有符合条件的变量纳入或者所有的变量都可纳入模型。
+  * （2）后向选择backward：一开始将所有变量纳入模型，然后挨个移除不符合条件的变量，持续此过程，直到留下所有最优的变量为止。
+  * （3）逐步选择stepwise：该算法是向前选择和向后选择的结合，逐步放入最优的变量、移除最差的变量。
+
+#### 3、基于特征重要度的变量筛选
+* 其原理主要是通过随机森林和GBDT等集成模型选取特征的重要度
+* 随机森林计算特征重要度的步骤
+
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/rf_feature.jpg" alt="error"/>
+
+  * ***当改变样本在该特征的值，若袋外数据准确率大幅度下降，则该特征对于样本的预测结果 有很大影响，说明特征的重要度比较高。***
+
+* GBDT计算特征重要度原理
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" alt="error"/>
+
+#### 4、基于LASSO正则化的变量筛选
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" alt="error"/>
 
 
 ## Reference
