@@ -278,6 +278,11 @@ cutoff = woebin(data, y, method='tree')
   * 对于变量的一个分箱，这个分组的好坏客户比例与整体好坏客户比例相差越大，IV值越大，否则，IV值越小。
   * IV值的取值范围是[0,+∞)，当分箱中只包含好客户或坏客户时，IV = +∞，当分箱中好坏客户比例等于整体好坏客户比例时，IV为0。
 
+* kaggle数据集的IV值计算结果
+  * DebtRatio、MonthlyIncome、NumberOfOpenCreditLinesAndLoans、NumberRealEstateLoansOrLines和NumberOfDependents变量的IV值明显较低，所以予以删除。
+
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV.png" alt="error"/>
+
 #### 3.2、基于stepwise的变量筛选
 * 基于基于stepwise的变量筛选方法也是评分卡中变量筛选最常用的方法之一。
 * 包括三种筛选变量的方式
