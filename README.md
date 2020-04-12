@@ -268,7 +268,7 @@ cutoff = woebin(data, y, method='tree')
 * 常用判断标准
   * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_1.jpg" width="700" height="168" alt="error"/>
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_2.jpg" width="700" height="578" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_2.jpg" width="800" height="660" alt="error"/>
 
 * WOE和IV值的特点
   * ***注： 此处使用的WOE计算公式中，坏客户为分母，好客户为分子***
