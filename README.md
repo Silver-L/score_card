@@ -30,7 +30,7 @@ https://www.kaggle.com/c/GiveMeSomeCredit/data
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_variable.png" alt="error"/>
 
 ## 二、数据预处理
-### ***数据集整体情况***
+### ***1、数据集整体情况***
 用describe函数获取数据集情况
 
 ```
@@ -39,13 +39,13 @@ data.describe()
 ```
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_describe.jpg" alt="error"/>
 
-### ***缺失值处理***
-#### 1、直接删除元祖
+### ***2、缺失值处理***
+#### 2.1、直接删除元祖
 * 这种方法在对象有多个属性缺失值、被删除的含缺失值的对象与信息表中的数据量相比非常小的情况下是非常有效的。
 * 缺点
   * ***在信息表中对象很少的情况下会影响到结果的正确性，可能导致数据发生偏离，从而引出错误的结论。***
 
-#### 2、数据补齐
+#### 2.2、数据补齐
 * 人工填写（Filling Manually）
   * 这个方法产生数据偏离最小，是填充效果最好的一种。当数据规模很大、空值很多的时候，该方法是不可行的。
   * ***不适合大数据***
@@ -143,14 +143,14 @@ data.describe()
     * （2）贮存多重插补数据集需要更多存储空间
     * （3）分析多重插补数据集比单一插补需要花费更多精力
 
-#### 3、不处理
+#### 2.3、不处理
 * 直接在包含空值的数据上进行数据挖掘。
 * 这类方法包括贝叶斯网络和人工神经网络等。
 
-### ***异常值处理***
+### ***3、异常值处理***
 异常值，即在数据集中存在不合理的值，又称离群点。
 
-#### 1、判断方法
+#### 3.1、判断方法
 * 简单统计分析
   * 对属性值进行一个描述性的统计（规定范围），从而查看哪些值是不合理的（范围以外的值）。
 
@@ -165,13 +165,13 @@ data.describe()
 * 使用距离检测多元离群点
   * 当数据不服从正态分布时，可以通过远离平均距离多少倍的标准差来判定，多少倍的取值需要根据经验和实际情况来决定。
 
-#### 2、处理方法
+#### 3.2、处理方法
 * 删除含有异常值的记录
 * 将异常值视为缺失值，使用缺失值处理方法来处理
 * 用平均值来修正
 * 不处理
 
-### ***数据切分***
+### ***4、数据切分***
 * 将数据分为训练集和验证集
 ```
 # X: data, Y: label, test_size: 验证集比例
@@ -202,17 +202,17 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
   * 变量在业务上的可解释性（被挑战时可以解释的通）
   * 等等
 
-### ***分箱处理（Binning）***
+### ***1、分箱处理（Binning）***
 * 变量分箱（binning）是对连续变量离散化（discretization）的一种称呼。
 * 分箱的几种方法
-  * 1、无监督分箱
+  * 1.1、无监督分箱
     * (1) 等频分箱：把自变量按从小到大的顺序排列，根据自变量的个数等分为k部分，每部分作为一个分箱。
     * (2) 等距分箱：把自变量按从小到大的顺序排列，将自变量的取值范围分为k个等距的区间，每个区间作为一个分箱。
     * (3) 聚类分箱：用k-means聚类法将自变量聚为k类，但在聚类过程中需要保证分箱的有序性。
 
     * ***由于无监督分箱仅仅考虑了各个变量自身的数据结构，并没有考虑自变量与目标变量之间的关系，因此无监督分箱不一定会带来模型性能的提升。***
 
-  * 2、有监督分箱
+  * 1.2、有监督分箱
     * （1）Split 分箱
       * 一种自上而下(即基于分裂)的数据分段方法。如下图所示，Split 分箱和决策树比较相似，切分点的选择指标主要有 entropy，gini 指数和 IV 值等。
 
@@ -240,7 +240,7 @@ from binning.woebin import *
 cutoff = woebin(data, y, method='tree')
 ```
 
-### ***WOE (Weight of Evidence)***
+### ***2、WOE (Weight of Evidence)***
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/WOE.jpg" width="700" height="823" alt="error"/>
 
@@ -252,7 +252,7 @@ cutoff = woebin(data, y, method='tree')
   * 转化为连续变量之后，便于分析变量与变量之间的相关性
   * 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
 
-### ***单变量筛选***
+### ***3、单变量筛选***
 * 单变量的筛选基于变量预测能力
 * 常用方法
   * 基于IV值的变量筛选（代码中使用）
@@ -260,7 +260,7 @@ cutoff = woebin(data, y, method='tree')
   * 基于特征重要度的变量筛选：RF, GBDT…
   * 基于LASSO正则化的变量筛选
 
-#### 1、基于IV值的变量筛选
+#### 3.1、基于IV值的变量筛选
 * IV称为信息价值(information value)，是目前评分卡模型中筛选变量最常用的指标之一。
 * ***自变量的IV值越大，表示自变量的预测能力越强***
 * 类似的指标还有信息增益、基尼(gini)系数等。
@@ -278,14 +278,14 @@ cutoff = woebin(data, y, method='tree')
   * 对于变量的一个分箱，这个分组的好坏客户比例与整体好坏客户比例相差越大，IV值越大，否则，IV值越小。
   * IV值的取值范围是[0,+∞)，当分箱中只包含好客户或坏客户时，IV = +∞，当分箱中好坏客户比例等于整体好坏客户比例时，IV为0。
 
-#### 2、基于stepwise的变量筛选
+#### 3.2、基于stepwise的变量筛选
 * 基于基于stepwise的变量筛选方法也是评分卡中变量筛选最常用的方法之一。
 * 包括三种筛选变量的方式
   * （1）前向选择forward：逐步将变量一个一个放入模型，并计算相应的指标，如果指标值符合条件，则保留，然后再放入下一个变量，直到没有符合条件的变量纳入或者所有的变量都可纳入模型。
   * （2）后向选择backward：一开始将所有变量纳入模型，然后挨个移除不符合条件的变量，持续此过程，直到留下所有最优的变量为止。
   * （3）逐步选择stepwise：该算法是向前选择和向后选择的结合，逐步放入最优的变量、移除最差的变量。
 
-#### 3、基于特征重要度的变量筛选
+#### 3.3、基于特征重要度的变量筛选
 * 其原理主要是通过随机森林和GBDT等集成模型选取特征的重要度
 * 随机森林计算特征重要度的步骤
 
@@ -296,21 +296,21 @@ cutoff = woebin(data, y, method='tree')
 * GBDT计算特征重要度原理
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/gbdt_feature.jpg" width="691" height="270" alt="error"/>
 
-#### 4、基于LASSO正则化的变量筛选
+#### 3.4、基于LASSO正则化的变量筛选
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/lasso_feature.jpg" width="700" height="100" alt="error"/>
 
-### ***变量相关性分析***
+### ***4、变量相关性分析***
 * ***即使不进行线性相关性分析也不会影响模型的整体性能***
 * 变量相关性的分析
   * 为了让模型更易于解释
   * 保证不同的分箱的得分正确
 
-#### 1、变量两两相关性分析
+#### 4.1、变量两两相关性分析
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_1.jpg" width="700" height="320" alt="error"/>
 
 
-#### 2、变量的多重共线性分析
+#### 4.2、变量的多重共线性分析
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_2.jpg" width="700" height="500" alt="error"/>
 
