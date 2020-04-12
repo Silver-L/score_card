@@ -240,7 +240,7 @@ from binning.woebin import *
 cutoff = woebin(data, y, method='tree')
 ```
 
-***WOE (Weight of Evidence)***
+### ***WOE (Weight of Evidence)***
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/WOE.jpg" alt="error"/>
 
@@ -252,13 +252,34 @@ cutoff = woebin(data, y, method='tree')
   * 转化为连续变量之后，便于分析变量与变量之间的相关性
   * 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
 
-***单变量筛选***
-* 单变量的筛选基于变量预测能力
+### ***单变量筛选**** 单变量的筛选基于变量预测能力
+
 * 常用方法
   * 基于IV值的变量筛选（代码中使用）
   * 基于stepwise的变量筛选
   * 基于特征重要度的变量筛选：RF, GBDT…
   * 基于LASSO正则化的变量筛选
+
+#### 1、基于IV值的变量筛选
+* IV称为信息价值(information value)，是目前评分卡模型中筛选变量最常用的指标之一。
+* ***自变量的IV值越大，表示自变量的预测能力越强***
+* 类似的指标还有信息增益、基尼(gini)系数等。
+
+* 常用判断标准
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_1.jpg" alt="error"/>
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_2.jpg" alt="error"/>
+
+* WOE和IV值的特点
+  * ***注： 此处使用的WOE计算公式中，坏客户为分母，好客户为分子***
+  * 当前分箱中，坏客户占比越大，WOE值越大
+  * 当前分箱中WOE的正负，由当前分箱中好坏客户比例，与样本整体好坏客户比例的大小关系决定
+  * WOE的取值范围是[-∞,+∞]，当分箱中好坏客户比例等于整体好坏客户比例时，WOE为0。
+  * 对于变量的一个分箱，这个分组的好坏客户比例与整体好坏客户比例相差越大，IV值越大，否则，IV值越小。
+  * IV值的取值范围是[0,+∞)，当分箱中只包含好客户或坏客户时，IV = +∞，当分箱中好坏客户比例等于整体好坏客户比例时，IV为0。
+
+#### 2、基于stepwise的变量筛选
+
 
 ## Reference
 #### 1、项目（评分卡的总结性文章，干货较多）
