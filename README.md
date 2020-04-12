@@ -192,12 +192,15 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/EDA.png" alt="error"/>
 
-## 四、特征选择
-* 好的特征选择能够提升模型的性能，更能帮助我们理解数据的特点、底层结构，这对进一步改善模型、算法都有着重要作用。
-* 本次采用的方法
-  * WOE分析方法，即是通过比较指标分箱和对应分箱的违约概率来确定指标是否符合经济意义。
-* 其他方法
-  * 树模型等等
+## 四、变量筛选
+* 好的变量（特征）选择能够提升模型的性能，更能帮助我们理解数据的特点、底层结构，这对进一步改善模型、算法都有着重要作用。
+* 变量筛选需要考虑的因素
+  * ***变量的预测能力***
+  * ***变量之间的线性相关性***
+  * 变量的简单性（容易生成和使用）
+  * 变量的强壮性（不容易被绕过）
+  * 变量在业务上的可解释性（被挑战时可以解释的通）
+  * 等等
 
 ### ***分箱处理（Binning）***
 * 变量分箱（binning）是对连续变量离散化（discretization）的一种称呼。
@@ -222,6 +225,12 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 
       <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
 
+    * （3）Monotonic Binning
+      * 要求各组的单调事件率呈单调。
+      * ```
+        https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm
+        ```
+
 * 代码
 ```
 # https://github.com/ShichenXie/scorecardpy
@@ -230,6 +239,26 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 from binning.woebin import *
 cutoff = woebin(data, y, method='tree')
 ```
+
+***WOE (Weight of Evidence)***
+
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/WOE.jpg" alt="error"/>
+
+* WOE编码的优势
+  * 可提升模型的预测效果
+  * 将自变量规范到同一尺度上
+  * WOE能反映自变量取值的贡献情况
+  * 有利于对变量的每个分箱进行评分
+  * 转化为连续变量之后，便于分析变量与变量之间的相关性
+  * 与独热向量编码相比，可以保证变量的完整性，同时避免稀疏矩阵和维度灾难
+
+***单变量筛选***
+* 单变量的筛选基于变量预测能力
+* 常用方法
+  * 基于IV值的变量筛选（代码中使用）
+  * 基于stepwise的变量筛选
+  * 基于特征重要度的变量筛选：RF, GBDT…
+  * 基于LASSO正则化的变量筛选
 
 ## Reference
 #### 1、项目
@@ -253,5 +282,6 @@ https://www.zhihu.com/question/28641663?sort=created
 ```
 #### 5、分箱
 ```
-https://github.com/ShichenXie/scorecardpy
+https://github.com/ShichenXie/scorecardpy (tree and chimerge)
+https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm (Monotonic-WOE-Binning)
 ```
