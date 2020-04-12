@@ -158,9 +158,9 @@ data.describe()
   * 数据服从正态分布：根据正态分布的定义可知，距离平均值3δ之外的概率为 P(|x-μ|>3δ) <= 0.003 ，这属于极小概率事件，在默认情况下我们可以认定，距离超过平均值3δ的样本是不存在的。因此，当样本距离平均值大于3δ，认为该样本为异常值。
   * 根据概率值的大小可以判断 x 是否属于异常值。
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_1.png" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_1.png" width="700" height="324" alt="error"/>
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_2.png" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_2.png" width="700" height="284" alt="error"/>
 
 * 使用距离检测多元离群点
   * 当数据不服从正态分布时，可以通过远离平均距离多少倍的标准差来判定，多少倍的取值需要根据经验和实际情况来决定。
@@ -242,7 +242,7 @@ cutoff = woebin(data, y, method='tree')
 
 ### ***WOE (Weight of Evidence)***
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/WOE.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/WOE.jpg" width="700" height="823" alt="error"/>
 
 * WOE编码的优势
   * 可提升模型的预测效果
@@ -266,9 +266,9 @@ cutoff = woebin(data, y, method='tree')
 * 类似的指标还有信息增益、基尼(gini)系数等。
 
 * 常用判断标准
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_1.jpg" alt="error"/>
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_1.jpg" width="700" height="168" alt="error"/>
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_2.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/IV_2.jpg" width="700" height="578" alt="error"/>
 
 * WOE和IV值的特点
   * ***注： 此处使用的WOE计算公式中，坏客户为分母，好客户为分子***
