@@ -398,9 +398,8 @@ cutoff = woebin(data, y, method='tree')
 ## 六、信用评分
 * 将客户违约的概率表示为p，则正常的概率为1-p。
   * 这两个事件相互排斥并互为补集，即其概率之和等于1。
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-$$Odds = \frac{P}{1-P}$$
+  * 因此可以得到
+    * <img src="http://latex.codecogs.com/gif.latex?\frac{P}{1-P}" />
 
 
 ## Reference
