@@ -399,7 +399,8 @@ cutoff = woebin(data, y, method='tree')
 * 将客户违约的概率表示为p，则正常的概率为1-p。
   * 这两个事件相互排斥并互为补集，即其概率之和等于1。
 
-$ \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,. $
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+$$Odds = \frac{P}{1-P}$$
 
 
 ## Reference
