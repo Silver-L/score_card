@@ -398,8 +398,39 @@ cutoff = woebin(data, y, method='tree')
 ## 六、信用评分
 * 将客户违约的概率表示为p，则正常的概率为1-p。
   * 这两个事件相互排斥并互为补集，即其概率之和等于1。
-  * 因此可以得到
-    * <img src="http://latex.codecogs.com/gif.latex?\frac{P}{1-P}" />
+  * 因此可以得到Odds（客户违约的相对概率）
+    * <img src="http://latex.codecogs.com/gif.latex?Odds = \frac{P}{1-P}" />
+
+* 评分卡设定的分值刻度可以通过将分值表示为比率对数的线性表达式来定义。
+  * <img src="http://latex.codecogs.com/gif.latex?Socre = A - B\log(Odds)" />
+
+  * 其中，A和B是常数。负号可以使得违约概率越低，得分越高。
+  * 通常，这是分值的理想方向，高分值代表低分险
+
+* A和B的值可以通过将两个***已知或假设的分值***代入公式计算得到
+  * 两个假设
+    * （1）在某个特定的比率 <img src="http://latex.codecogs.com/gif.latex?Odds = \theta_0"/>时，设定特定的预期分值<img src="http://latex.codecogs.com/gif.latex?P_0"/>
+    * （2）指定违约概率翻倍的评分（PDO）
+
+  * 计算方法
+    * （1）设定比率为<img src="http://latex.codecogs.com/gif.latex?Odds = \theta_0"/>的特定点的分值为<img src="http://latex.codecogs.com/gif.latex?P_0"/>
+    * （2）比率为<img src="http://latex.codecogs.com/gif.latex?Odds = 2\theta_0"/>的店的分值为<img src="http://latex.codecogs.com/gif.latex?P_0 + PDO"/>
+    * 代入socre公式
+      * <img src="http://latex.codecogs.com/gif.latex?P_0 = A - B\log(\theta_0)"/>
+      * <img src="http://latex.codecogs.com/gif.latex?P_0 + PDO = A - B\log(2\theta_0)"/>
+    * 解上述两个方程中的常数A和B，可以得到
+      * <img src="http://latex.codecogs.com/gif.latex?B = \frac{PDO}{\log(2)}"/>
+      * <img src="http://latex.codecogs.com/gif.latex?A = P_0 + B\log(\theta_0)"/>
+
+  * 例如，假设想要设定评分卡刻度使得比率为{1:60}（违约比正常）时的分值为600分，PDO = 20。然后，给定 B = 28.85, A = 481.86。则可以计算分值为：
+    * <img src="http://latex.codecogs.com/gif.latex?Score = 481.86 + 28.85\log(Odds)"/>
+
+
+
+
+
+
+
 
 
 ## Reference
