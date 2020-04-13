@@ -326,7 +326,7 @@ cutoff = woebin(data, y, method='tree')
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/Compatibility_analysis_2.jpg" width="700" height="500" alt="error"/>
 
-## 五、模型开发
+## 五、模型开发/模型评估
 ### ***1、WOE编码***
 * 根据分箱时得到的WOE值，将数据转换为WOE值
 * WOE转换可以将Logistic回归模型转变为标准评分卡格式。
@@ -388,6 +388,18 @@ cutoff = woebin(data, y, method='tree')
 
 * Kaggle数据集的实验结果（AUC）
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC_result.png" alt="error"/>
+
+* KS值
+  * KS值表示了模型区分好坏客户的能力。
+  * 其实质是TPR-FPR随好坏客户阈值变化的最大值。
+  * KS的取值范围在0.5和1之间，值越大，模型的预测准确性越好。
+  * 一般，KS > 0.4 即认为模型有比较好的预测性能。
+
+## 六、信用评分
+* 将客户违约的概率表示为p，则正常的概率为1-p。
+  * 这两个事件相互排斥并互为补集，即其概率之和等于1。
+
+$ \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,. $
 
 
 ## Reference

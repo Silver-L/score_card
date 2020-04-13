@@ -66,3 +66,4 @@ if __name__ == '__main__':
     for a, b in zip(x, iv_list):
         plt.text(a, b + 0.01, '%.4f' % b, ha='center', va='bottom', fontsize=10)
     plt.show()
+
