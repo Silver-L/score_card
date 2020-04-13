@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 '''
 EDA(Exploratory Data Analysis) 探索性分析
 '''
