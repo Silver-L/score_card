@@ -400,6 +400,8 @@ cutoff = woebin(data, y, method='tree')
   * 这两个事件相互排斥并互为补集，即其概率之和等于1。
   * 因此可以得到Odds（客户违约的相对概率）
     * <img src="http://latex.codecogs.com/gif.latex?Odds = \frac{P}{1-P}" />
+  * 或者可以用如下方法计算违约的概率P
+    * <img src="http://latex.codecogs.com/gif.latex?P = \frac{Odds}{1+Odds}" />
 
 * 评分卡设定的分值刻度可以通过将分值表示为比率对数的线性表达式来定义。
   * <img src="http://latex.codecogs.com/gif.latex?Socre = A - B\log(Odds)" />
@@ -414,7 +416,7 @@ cutoff = woebin(data, y, method='tree')
 
   * 计算方法
     * （1）设定比率为<img src="http://latex.codecogs.com/gif.latex?Odds = \theta_0"/>的特定点的分值为<img src="http://latex.codecogs.com/gif.latex?P_0"/>
-    * （2）比率为<img src="http://latex.codecogs.com/gif.latex?Odds = 2\theta_0"/>的店的分值为<img src="http://latex.codecogs.com/gif.latex?P_0 + PDO"/>
+    * （2）比率为<img src="http://latex.codecogs.com/gif.latex?Odds = 2\theta_0"/>的点的分值为<img src="http://latex.codecogs.com/gif.latex?P_0 + PDO"/>
     * 代入socre公式
       * <img src="http://latex.codecogs.com/gif.latex?P_0 = A - B\log(\theta_0)"/>
       * <img src="http://latex.codecogs.com/gif.latex?P_0 + PDO = A - B\log(2\theta_0)"/>
@@ -422,15 +424,28 @@ cutoff = woebin(data, y, method='tree')
       * <img src="http://latex.codecogs.com/gif.latex?B = \frac{PDO}{\log(2)}"/>
       * <img src="http://latex.codecogs.com/gif.latex?A = P_0 + B\log(\theta_0)"/>
 
-  * 例如，假设想要设定评分卡刻度使得比率为{1:60}（违约比正常）时的分值为600分，PDO = 20。然后，给定 B = 28.85, A = 481.86。则可以计算分值为：
+  * 例如，假设想要设定评分卡刻度使得比率为{1:60}（违约比正常）时的分值为600分，PDO = 20（每低20分，坏客户比率翻倍）。然后，给定 B = 28.85, A = 481.86。则可以计算分值为：
     * <img src="http://latex.codecogs.com/gif.latex?Score = 481.86 + 28.85\log(Odds)"/>
+    * 常数A通常被称为补偿，常数B被称为刻度。
 
+    * 根据如上公式，可以得到以下结果
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score_card.jpg" alt="error"/>
 
+* 逻辑回归模型计算比率公式
+  * <img src="http://latex.codecogs.com/gif.latex?\log(Odds) = \beta_0 + \beta_1{x_1} + ... + \beta_p{x_p}"/>
 
+* 将Score公式和逻辑回归模型的公式合并
+  * <img src="http://latex.codecogs.com/gif.latex?Score = A - B{\beta_0 + \beta_1{x_1} + ... + \beta_p{x_p}}"/>
+  * 其中，变量<img src="http://latex.codecogs.com/gif.latex?x_1, ... , x_p"/>是出现在最终模型中的自变量。
+  * 由于所有变量都用WOE转换进行了转换，可以将这些变量中的每一个都写成如下的展开式。
 
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_1.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_2.jpg" alt="error"/>
 
-
-
+* 从以上公式中，我们发现每个分箱的评分都可以表示为<img src="http://latex.codecogs.com/gif.latex?-B(\beta_i{\omega_ij}"/>，也就是说影响每个分箱的因素包括三部分
+  * 参数<img src="http://latex.codecogs.com/gif.latex?B"/>
+  * 变量系数<img src="http://latex.codecogs.com/gif.latex?\theta_i"/>
+  * 对应分箱的WOE编码<img src="http://latex.codecogs.com/gif.latex?\omega_ij"/>
 
 
 ## Reference
