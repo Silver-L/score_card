@@ -488,7 +488,7 @@ cutoff = sc.woebin(data, y, method='tree')
   * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/psi.png" alt="error"/>
 
 ## 7、小结
-简单的学习了评分卡的创建流程。分箱等特征工程的相关知识还需多加学习。
+简单学习了评分卡的创建流程。分箱等特征工程的相关知识还需多加学习。
 
 ## Reference
 #### 1、评分卡的总结性文章（干货较多）
