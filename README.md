@@ -379,7 +379,7 @@ cutoff = sc.woebin(data, y, method='tree')
 * TPR和FRP
   * TPR (或Recall) 为坏客户的查全率，表示被模型抓到的坏客户占总的坏客户的比例
   * FPR 为好客户误判率，表示好客户中倍模型误误判的比例
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" width="700" height="624" alt="error"/>
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" width="500" height="408" alt="error"/>
 
   * 可以把TPR看做模型的收益，FPR看做模型付出的代价
   * TPR越大，表示模型能够抓到的坏客户比例越大，即收益越大
