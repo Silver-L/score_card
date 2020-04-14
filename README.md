@@ -460,7 +460,7 @@ cutoff = sc.woebin(data, y, method='tree')
 
 #### ***6.2、Kaggle数据集的实验结果***
 * 变量对应的评分，例：变量age
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/age_score.png" alt="error"/>
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/age_score.png" alt="error" align=center/>
 
 * 一部分测试数据的总评分
   * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score.png" alt="error"/>
