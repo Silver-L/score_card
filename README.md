@@ -1,4 +1,5 @@
 # 信用评分卡（Learning Note）
+此处为信用评分卡学习笔记，大致总结了评分卡的基础知识。感谢各位大佬的文章！
 
 ## 项目流程
 * 数据获取
@@ -234,7 +235,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
       * Chimerge通常采用卡方值来衡量两相邻区间的类分布情况。
 
       <div align=center>
-      <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
+        <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
       </div>
 
     * （3）Monotonic Binning
@@ -486,7 +487,8 @@ cutoff = sc.woebin(data, y, method='tree')
 * 数据集整体的评分分布
   * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/psi.png" alt="error"/>
 
-
+## 7、小结
+简单的学习了评分卡的创建流程。分箱等特征工程的相关知识还需多加学习。
 
 ## Reference
 #### 1、评分卡的总结性文章（干货较多）
@@ -510,10 +512,14 @@ https://www.zhihu.com/question/28641663?sort=created
 ```
 #### 5、分箱
 ```
+https://blog.csdn.net/App_12062011/article/details/103120776
 https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm (Monotonic-WOE-Binning)
 ```
 #### 6、开源项目
 ```
 https://github.com/ShichenXie/scorecardpy (scorecardpy)
 ```
-
+#### 7、书籍
+```
+《信用风险评分卡研究》Mamdouh Refaat著
+```
