@@ -399,7 +399,7 @@ cutoff = sc.woebin(data, y, method='tree')
   * test_data
   <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/test_perf.png" alt="error"/>
 
-## 六、信用评分
+## 六、信用评分及评分系统
 * 将客户违约的概率表示为p，则正常的概率为1-p。
   * 这两个事件相互排斥并互为补集，即其概率之和等于1。
   * 因此可以得到Odds（客户违约的相对概率）
@@ -450,6 +450,17 @@ cutoff = sc.woebin(data, y, method='tree')
   * 参数<img src="http://latex.codecogs.com/gif.latex?B"/>
   * 变量系数<img src="http://latex.codecogs.com/gif.latex?\theta_i"/>
   * 对应分箱的WOE编码<img src="http://latex.codecogs.com/gif.latex?\omega_ij"/>
+
+* kaggle数据集的实验结果
+  * 变量对应的评分，例：变量age
+    * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/age_score.png" alt="error"/>
+
+  * 一部分测试数据的总评分
+    * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score.png" alt="error"/>
+
+  * 数据集整体的评分分布
+    * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/psi.png" alt="error"/>
+
 
 
 ## Reference
