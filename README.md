@@ -379,7 +379,7 @@ cutoff = sc.woebin(data, y, method='tree')
 * TPR和FRP
   * TPR (或Recall) 为坏客户的查全率，表示被模型抓到的坏客户占总的坏客户的比例
   * FPR 为好客户误判率，表示好客户中倍模型误误判的比例
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" alt="error"/>
+  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" width="700" height="624" alt="error"/>
 
   * 可以把TPR看做模型的收益，FPR看做模型付出的代价
   * TPR越大，表示模型能够抓到的坏客户比例越大，即收益越大
@@ -390,7 +390,7 @@ cutoff = sc.woebin(data, y, method='tree')
   * AUC的取值范围在0.5和1之间
   * ***AUC 越大，表示模型预测性能越好***
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC.png" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC.png" width="700" height="568" alt="error"/>
 
 * KS值
   * KS值表示了模型区分好坏客户的能力。
@@ -440,7 +440,7 @@ cutoff = sc.woebin(data, y, method='tree')
     * 常数A通常被称为补偿，常数B被称为刻度。
 
     * 根据如上公式，可以得到以下结果
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score_card.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score_card.jpg" width="700" height="363" alt="error"/>
 
 * 逻辑回归模型计算比率公式
   * <img src="http://latex.codecogs.com/gif.latex?\log(Odds) = \beta_0 + \beta_1{x_1} + ... + \beta_p{x_p}"/>
@@ -450,8 +450,8 @@ cutoff = sc.woebin(data, y, method='tree')
   * 其中，变量<img src="http://latex.codecogs.com/gif.latex?x_1, ... , x_p"/>是出现在最终模型中的自变量。
   * 由于所有变量都用WOE转换进行了转换，可以将这些变量中的每一个都写成如下的展开式。
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_1.jpg" alt="error"/>
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_2.jpg" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_1.jpg" width="700" height="510" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_2.jpg" width="700" height="579" alt="error"/>
 
 * 从以上公式中，我们发现每个分箱的评分都可以表示为<img src="http://latex.codecogs.com/gif.latex?-B(\beta_i{\omega_ij}"/>，也就是说影响每个分箱的因素包括三部分
   * 参数<img src="http://latex.codecogs.com/gif.latex?B"/>
