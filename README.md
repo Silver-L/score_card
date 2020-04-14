@@ -27,7 +27,10 @@ https://www.kaggle.com/c/GiveMeSomeCredit/data
 * 其他因素：包括了借款人的家属数量（不包括本人在内）。
 * 时间窗口：自变量的观察窗口为过去两年，因变量表现窗口为未来两年。
 
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_variable.png" alt="error"/>
+<div align=center>
+    <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/data_variable.png" alt="error"/>
+</div>
+
 
 ## 二、数据预处理
 ### ***2.1、数据集整体情况***
@@ -221,15 +224,18 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
   * 4.1.2、有监督分箱
     * （1）Split 分箱
       * 一种自上而下(即基于分裂)的数据分段方法。如下图所示，Split 分箱和决策树比较相似，切分点的选择指标主要有 entropy，gini 指数和 IV 值等。
+      <div align=center>
+        <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/split_binning.jpg" alt="error"/>
+      </div>
 
-      <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/split_binning.jpg" alt="error"/>
-  
     * （2）Chimerge 分箱（卡方分箱）
       * 一种自底向上(即基于合并)的数据离散化方法。
       * 其基本思想是如果两个相邻的区间具有类似的类分布，则这两个区间合并；否则，它们应保持分开。
       * Chimerge通常采用卡方值来衡量两相邻区间的类分布情况。
 
+      <div align=center>
       <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/chimerge_binning.jpg" alt="error"/>
+      </div>
 
     * （3）Monotonic Binning
       * 要求各组的单调事件率呈单调。
@@ -379,7 +385,9 @@ cutoff = sc.woebin(data, y, method='tree')
 * TPR和FRP
   * TPR (或Recall) 为坏客户的查全率，表示被模型抓到的坏客户占总的坏客户的比例
   * FPR 为好客户误判率，表示好客户中倍模型误误判的比例
-  * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" width="400" height="356" alt="error"/>
+<div align=center>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/TPR_FPR.jpg" width="400" height="356" alt="error"/>
+</div>
 
   * 可以把TPR看做模型的收益，FPR看做模型付出的代价
   * TPR越大，表示模型能够抓到的坏客户比例越大，即收益越大
@@ -389,8 +397,9 @@ cutoff = sc.woebin(data, y, method='tree')
   * AUC 表示模型对任意坏客户的输出结果为大于模型对任意好客户的输出结果的概率
   * AUC的取值范围在0.5和1之间
   * ***AUC 越大，表示模型预测性能越好***
-
+<div align=center>
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC.png" width="700" height="568" alt="error"/>
+</div>
 
 * KS值
   * KS值表示了模型区分好坏客户的能力。
@@ -440,7 +449,9 @@ cutoff = sc.woebin(data, y, method='tree')
     * 常数A通常被称为补偿，常数B被称为刻度。
 
     * 根据如上公式，可以得到以下结果
+<div align=center>
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score_card.jpg" width="700" height="363" alt="error"/>
+</div>
 
 * 逻辑回归模型计算比率公式
   * <img src="http://latex.codecogs.com/gif.latex?\log(Odds) = \beta_0 + \beta_1{x_1} + ... + \beta_p{x_p}"/>
@@ -450,8 +461,13 @@ cutoff = sc.woebin(data, y, method='tree')
   * 其中，变量<img src="http://latex.codecogs.com/gif.latex?x_1, ... , x_p"/>是出现在最终模型中的自变量。
   * 由于所有变量都用WOE转换进行了转换，可以将这些变量中的每一个都写成如下的展开式。
 
+<div align=center>
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_1.jpg" width="700" height="510" alt="error"/>
+</div>
+
+<div align=center>
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/logistic_score_2.jpg" width="700" height="579" alt="error"/>
+</div>
 
 * 从以上公式中，我们发现每个分箱的评分都可以表示为<img src="http://latex.codecogs.com/gif.latex?-B(\beta_i{\omega_ij}"/>，也就是说影响每个分箱的因素包括三部分
   * 参数<img src="http://latex.codecogs.com/gif.latex?B"/>
