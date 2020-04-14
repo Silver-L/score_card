@@ -1,0 +1,3 @@
+variable,bin,points
+NumberOfTime60-89DaysPastDueNotWorse,"[-inf,1.0)",3.0
+NumberOfTime60-89DaysPastDueNotWorse,"[1.0,inf)",-26.0

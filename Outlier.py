@@ -19,9 +19,6 @@ if __name__ == '__main__':
     data = data[data['NumberOfTimes90DaysLate'] < 90]
     data = data[data['NumberOfTime60-89DaysPastDueNotWorse'] < 90]
 
-    #变量SeriousDlqin2yrs取反
-    data['SeriousDlqin2yrs'] = 1 - data['SeriousDlqin2yrs']
-
     # 调整低收入人群比例
     data_norm = data[data['MonthlyIncome'] > 10]
     data_low = data[data['MonthlyIncome'] < 10]

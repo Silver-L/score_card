@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestRegressor
 from fancyimpute import KNN
 
 # 用随机森林处理缺失值
-def set_missing(df):
+def set_missing_rf(df):
     # 切割属性
     process_df = df.iloc[:, [5, 0, 1, 2, 3, 4, 6, 7, 8, 9]]
 
@@ -71,8 +71,8 @@ if __name__ == '__main__':
     # data.describe().to_csv('./data/DataDescribe.csv')
 
     # 补充缺失值（处理MonthlyIncome）
-    # data = set_missing(data)
+    # data = set_missing_rf(data)   # random forest
 
-    data = set_missing_knn(data)
+    data = set_missing_knn(data)    # K-NN
 
     data.to_csv('./data/MissingData.csv', index=False)

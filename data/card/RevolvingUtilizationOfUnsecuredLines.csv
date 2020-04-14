@@ -1,0 +1,8 @@
+variable,bin,points
+RevolvingUtilizationOfUnsecuredLines,"[-inf,0.1)",24.0
+RevolvingUtilizationOfUnsecuredLines,"[0.1,0.2)",16.0
+RevolvingUtilizationOfUnsecuredLines,"[0.2,0.30000000000000004)",11.0
+RevolvingUtilizationOfUnsecuredLines,"[0.30000000000000004,0.5)",3.0
+RevolvingUtilizationOfUnsecuredLines,"[0.5,0.7000000000000001)",-8.0
+RevolvingUtilizationOfUnsecuredLines,"[0.7000000000000001,0.9)",-16.0
+RevolvingUtilizationOfUnsecuredLines,"[0.9,inf)",-25.0

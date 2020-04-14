@@ -1,0 +1,3 @@
+variable,bin,points
+NumberOfTimes90DaysLate,"[-inf,1.0)",6.0
+NumberOfTimes90DaysLate,"[1.0,inf)",-36.0

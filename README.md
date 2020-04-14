@@ -470,6 +470,6 @@ https://www.zhihu.com/question/28641663?sort=created
 ```
 #### 5、分箱
 ```
-https://github.com/ShichenXie/scorecardpy (tree and chimerge)
+https://github.com/ShichenXie/scorecardpy (scorecardpy)
 https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm (Monotonic-WOE-Binning)
 ```
