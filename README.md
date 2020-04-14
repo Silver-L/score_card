@@ -173,7 +173,7 @@ data.describe()
 
 #### 2.3.3、Kaggle数据集的试验结果
 * 变量NumberOfTime30-59DaysPastDueNotWorse， NumberOfTimes90DaysLate，NumberOfTime60-89DaysPastDueNotWorse中包含的异常值
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_3.png" width="700" height="284" alt="error"/>
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_3.png" alt="error"/>
 
 * 本次采用方法：删除
 
