@@ -171,6 +171,12 @@ data.describe()
 * 用平均值来修正
 * 不处理
 
+#### 2.3.3、Kaggle数据集的试验结果
+* 变量NumberOfTime30-59DaysPastDueNotWorse， NumberOfTimes90DaysLate，NumberOfTime60-89DaysPastDueNotWorse中包含的异常值
+<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/exception_value_3.png" width="700" height="284" alt="error"/>
+
+* 本次采用方法：删除
+
 ### ***2.4、数据切分***
 * 将数据分为训练集和验证集
 ```
@@ -452,7 +458,7 @@ cutoff = sc.woebin(data, y, method='tree')
   * 变量系数<img src="http://latex.codecogs.com/gif.latex?\theta_i"/>
   * 对应分箱的WOE编码<img src="http://latex.codecogs.com/gif.latex?\omega_ij"/>
 
-#### ***6.2、kaggle数据集的实验结果***
+#### ***6.2、Kaggle数据集的实验结果***
 * 变量对应的评分，例：变量age
   * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/age_score.png" alt="error"/>
 
