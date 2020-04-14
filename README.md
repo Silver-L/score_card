@@ -236,8 +236,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_
 # https://github.com/ShichenXie/scorecardpy
 # y: label, method: tree or chimerge
 
-from binning.woebin import *
-cutoff = woebin(data, y, method='tree')
+import scorecardpy as sc
+cutoff = sc.woebin(data, y, method='tree')
 ```
 
 ### ***2、WOE (Weight of Evidence)***
@@ -386,14 +386,18 @@ cutoff = woebin(data, y, method='tree')
 
 <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC.png" alt="error"/>
 
-* Kaggle数据集的实验结果（AUC）
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/AUC_result.png" alt="error"/>
-
 * KS值
   * KS值表示了模型区分好坏客户的能力。
   * 其实质是TPR-FPR随好坏客户阈值变化的最大值。
   * KS的取值范围在0.5和1之间，值越大，模型的预测准确性越好。
   * 一般，KS > 0.4 即认为模型有比较好的预测性能。
+
+* Kaggle数据集的实验结果
+  * train_data
+  <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/train_perf.png" alt="error"/>
+
+  * test_data
+  <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/test_perf.png" alt="error"/>
 
 ## 六、信用评分
 * 将客户违约的概率表示为p，则正常的概率为1-p。
@@ -449,7 +453,7 @@ cutoff = woebin(data, y, method='tree')
 
 
 ## Reference
-#### 1、项目（评分卡的总结性文章，干货较多）
+#### 1、评分卡的总结性文章（干货较多）
 ```
 https://www.jianshu.com/p/f931a4df202c
 https://www.jianshu.com/p/2759e090bd53?t=123
@@ -470,6 +474,10 @@ https://www.zhihu.com/question/28641663?sort=created
 ```
 #### 5、分箱
 ```
-https://github.com/ShichenXie/scorecardpy (scorecardpy)
 https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm (Monotonic-WOE-Binning)
 ```
+#### 6、开源项目
+```
+https://github.com/ShichenXie/scorecardpy (scorecardpy)
+```
+
