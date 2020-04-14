@@ -456,10 +456,10 @@ cutoff = sc.woebin(data, y, method='tree')
     * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/age_score.png" alt="error"/>
 
   * 一部分测试数据的总评分
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score.png" alt="error"/>
+    * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/score.png" alt="error"/>
 
   * 数据集整体的评分分布
-<img src="https://github.com/Silver-L/score_card/blob/master/data/fig/psi.png" alt="error"/>
+    * <img src="https://github.com/Silver-L/score_card/blob/master/data/fig/psi.png" alt="error"/>
 
 
 
