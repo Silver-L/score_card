@@ -496,6 +496,7 @@ cutoff = sc.woebin(data, y, method='tree')
 https://www.jianshu.com/p/f931a4df202c
 https://www.jianshu.com/p/2759e090bd53?t=123
 https://zhuanlan.zhihu.com/p/36539125 (分箱等等）
+https://zhuanlan.zhihu.com/p/90251922
 ```
 #### 2、缺失值处理
 ```
